@@ -19,9 +19,7 @@ const Vision = () => {
             image_url: Yup.string().url("Invalid URL").required("Image URL is required"),
         }),
         onSubmit: async (values) => {
-            setLoading(true);
-            setError(null);
-            setResponse(null);
+            setLoading(true), setError(null), setResponse(null);
             try {
                 const res = await fetch('/api/vision', {
                     method: 'POST',
@@ -40,6 +38,13 @@ const Vision = () => {
             }
         },
     });
+
+    {loading && (
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
+            <FaSpinner className="animate-spin text-white text-4xl" />
+        </div>
+    )}
+    
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col items-center py-8">

@@ -19,9 +19,7 @@ const Vision = () => {
             image_url: Yup.string().url("Invalid URL").required("Image URL is required"),
         }),
         onSubmit: async (values) => {
-            setLoading(true);
-            setError(null);
-            setResponse(null);
+            setLoading(true), setError(null), setResponse(null);
             try {
                 const res = await fetch('/api/vision', {
                     method: 'POST',

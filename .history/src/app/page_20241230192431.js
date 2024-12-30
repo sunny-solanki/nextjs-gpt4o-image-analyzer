@@ -10,12 +10,13 @@ export default function Home() {
                 Analyze images and text effortlessly!
             </p>
             {/* Add navigation link */}
-            <Link href="/vision" className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
-                Start Analyzing
+            <Link href="/vision">
+                <a className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
+                    Start Analyzing
+                </a>
             </Link>
         </div>
     );
 }
-
 
 
